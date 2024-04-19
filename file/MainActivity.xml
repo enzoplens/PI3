@@ -1,0 +1,55 @@
+package br.edu.puccampinas.myapplication
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.TextView
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        class TabelaItem(
+            val tamanho: String,
+            val localizacao: String,
+            val preco: String
+        )
+
+        val item1 = TabelaItem("Grande", "R. João Ravagnani", "R$15,00/H")
+        val item2 = TabelaItem("Médio", "Pucc Campus 1", "R$7,50/H")
+        val item3 = TabelaItem("Pequeno", "Rua Azaléias", "R$3,00/H")
+
+        val tamanho1TextView = findViewById<TextView>(R.id.tamanho1TextView)
+        val localizacao1TextView = findViewById<TextView>(R.id.localizacao1TextView)
+        val preco1TextView = findViewById<TextView>(R.id.preco1TextView)
+
+        val tamanho2TextView = findViewById<TextView>(R.id.tamanho2TextView)
+        val localizacao2TextView = findViewById<TextView>(R.id.localizacao2TextView)
+        val preco2TextView = findViewById<TextView>(R.id.preco2TextView)
+
+        val tamanho3TextView = findViewById<TextView>(R.id.tamanho3TextView)
+        val localizacao3TextView = findViewById<TextView>(R.id.localizacao3TextView)
+        val preco3TextView = findViewById<TextView>(R.id.preco3TextView)
+
+        val tamanhoHeaderTextView = findViewById<TextView>(R.id.tamanhoHeaderTextView)
+        val localizacaoHeaderTextView = findViewById<TextView>(R.id.localizacaoHeaderTextView)
+        val precoHeaderTextView = findViewById<TextView>(R.id.precoHeaderTextView)
+
+        // Define os textos dos TextViews usando os valores dos itens de TabelaItem
+
+        tamanho1TextView.text = item1.tamanho
+        localizacao1TextView.text = item1.localizacao
+        preco1TextView.text = item1.preco
+
+        tamanho2TextView.text = item2.tamanho
+        localizacao2TextView.text = item2.localizacao
+        preco2TextView.text = item2.preco
+
+        tamanho3TextView.text = item3.tamanho
+        localizacao3TextView.text = item3.localizacao
+        preco3TextView.text = item3.preco
+        tamanhoHeaderTextView.text = "Tamanho"
+        localizacaoHeaderTextView.text = "Localização"
+        precoHeaderTextView.text = "Preço Base"
+    }
+}
